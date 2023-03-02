@@ -8,21 +8,20 @@
   <ul class="nav h-100 flex-column" style="width: 250px">
     <li class="nav-item mt-3">
       <a class="<?= $_SERVER['REQUEST_URI'] === '/' ? "nav-link text-primary" : "nav-link text-white"; ?>" 
-        aria-current="page" href="./">
+        aria-current="page" href="/">
         Dashboard
       </a>
     </li>
 
     <li class="nav-item mt-3">
-      <a class="<?= $_SERVER['REQUEST_URI'] === '/documents.php' ? "nav-link text-primary" : "nav-link text-white"; ?>"
-        href="./documents.php">
+      <a class="<?= $_SERVER['REQUEST_URI'] === '/documents' ? "nav-link text-primary" : "nav-link text-white"; ?>" href="/documents">
         Documents
       </a>
     </li>
 
     <li class="nav-item mt-3">
-      <a class="<?= $_SERVER['REQUEST_URI'] === '/statistics.php' ? "nav-link text-primary" : "nav-link text-white"; ?>" 
-        href="./statistics.php">
+      <a href="/statistics"
+        class="<?= $_SERVER['REQUEST_URI'] === '/statistics' ? "nav-link text-primary" : "nav-link text-white"; ?>">
         Statistics
       </a>
     </li>
