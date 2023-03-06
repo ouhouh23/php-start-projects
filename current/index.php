@@ -7,8 +7,8 @@ require "Database.php";
 $config = require "config.php";
 
 $db = new Database($config, 'root', '');
-$posts = $db -> query("select id from posts where id > 1") -> fetchAll();
+$posts = $db -> query("select * from posts where id > 1") -> fetchAll();
 
 foreach ($posts as $post) {
-	echo "<li>{$post['id']}</li>";
+	echo "<li>{$post['body']}</li>";
 }
