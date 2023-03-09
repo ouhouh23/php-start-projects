@@ -1,19 +1,9 @@
 <?php
 
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-
-$routes = [
-	'/' => 'controllers/index.php',
-	'/documents' => 'controllers/documents.php',
-	'/statistics' => 'controllers/statistics.php',
-	'/notes' => 'controllers/notes.php',
-	'/note' => 'controllers/note.php'
-];
-
 function abort ($code = 404) {
 	http_response_code(404);
 
-	require "views/{$code}.php";
+	require "views/http-errors/{$code}.php";
 
 	die();
 }
@@ -25,5 +15,9 @@ function router ($uri, $routes) {
 		abort();
 	}
 }
+
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+
+$routes = require "routes.php";
 
 router($uri, $routes);

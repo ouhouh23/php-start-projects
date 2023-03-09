@@ -14,4 +14,4 @@ authorization($note['user_id'] === $user);
 
 $heading = 'note';
 
-require "./views/note.view.php";
+require "views/notes/show.view.php";
