@@ -15,7 +15,15 @@
     <?= htmlspecialchars($note['body'])?>
   </div>
 
-  <a href="/notes">go back</a>
+  <p>
+    <a href="/notes">go back</a>
+  </p>
+
+  <form method="POST">
+    <input type="hidden" name="id" value="<?= $id ?>" />
+
+    <button>delete note</button>
+  </form>
 
 <?php require view_path("/partials/footer.php"); ?>    
 
