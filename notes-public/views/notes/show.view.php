@@ -20,7 +20,8 @@
   </p>
 
   <form method="POST">
-    <input type="hidden" name="id" value="<?= $id ?>" />
+    <input type="hidden" name="id" value="<?= $id ?>">
+    <input type="hidden" name="_method" value="DELETE" />
 
     <button>delete note</button>
   </form>

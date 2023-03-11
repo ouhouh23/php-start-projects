@@ -1,10 +1,8 @@
 <?php
 
-use Core\Database;
+use Core\App;
 
-$config = require base_path("config.php");
-
-$db = new Database($config, 'root', '');
+$db = App::getContainer() -> resolve('Core\Database');
 
 $notes = $db -> query("select * from notes where user_id = ?", [1]) -> findAll();
 

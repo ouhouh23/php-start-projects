@@ -1,13 +1,11 @@
 <?php
 
-use Core\Database;
+use Core\App;
 use Core\Validator;
 
 $heading = 'note create';
 
-$config = require base_path("config.php");
-
-$db = new Database($config, 'root', '');
+$db = App::getContainer() -> resolve('Core\Database');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$errors = [];

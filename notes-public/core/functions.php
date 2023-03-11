@@ -10,6 +10,14 @@ function dd($value) {
 	die();
 }
 
+function abort ($code = 404) {
+	http_response_code(404);
+
+	require view_path("http-errors/{$code}.php");
+
+	die();
+}
+
 function authorization($condition, $response = Response::FORBIDDEN) {
 	if (! $condition) {
 		abort($response);
