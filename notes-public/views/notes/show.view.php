@@ -19,12 +19,16 @@
     <a href="/notes">go back</a>
   </p>
 
-  <form method="POST">
+  <p>
+    <a href="/note/edit?id=<?= $note['id'] ?>">Edit note</a>
+  </p>
+
+<!--   <form method="POST">
     <input type="hidden" name="id" value="<?= $id ?>">
     <input type="hidden" name="_method" value="DELETE" />
 
     <button>delete note</button>
-  </form>
+  </form> -->
 
 <?php require view_path("/partials/footer.php"); ?>    
 
